@@ -1,0 +1,4 @@
+edu.escuelaing.arep.logservice
+edu.escuelaing.arep.logservice.model
+edu.escuelaing.arep.logservice.persistence
+edu.escuelaing.arep.logservice.service

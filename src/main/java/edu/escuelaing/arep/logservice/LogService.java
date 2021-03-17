@@ -8,8 +8,16 @@ import java.util.List;
 import java.util.Map;
 import static spark.Spark.*;
 
+/**
+ * Main class of Log sevice
+ */
 public class LogService {
 
+    /**
+     * The entry point of Log Service application
+     *
+     * @param args the args
+     */
     public static void main(String... args){
         port(getPort());
         MessageServer ms = new MessageServer();

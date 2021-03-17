@@ -12,16 +12,27 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Class that represents a Message server.
+ */
 public class MessageServer {
 
     private DatabaseConnection dbc;
     private MongoCollection<Document> collection;
 
+    /**
+     * Instantiates a new Message server.
+     */
     public MessageServer () {
         this.dbc = DatabaseConnection.getInstance();
         this.collection = dbc.getCollection();
     }
 
+    /**
+     * Get messages list.
+     *
+     * @return the list
+     */
     public List<Message> getMessages(){
         List<Message> messages = new ArrayList<>();
         for (Document d : collection.find()) {
@@ -30,6 +41,12 @@ public class MessageServer {
         return getLastMessages(messages, 10);
     }
 
+    /**
+     * Post message message.
+     *
+     * @param message the message
+     * @return the message
+     */
     public Message postMessage(String message){
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
